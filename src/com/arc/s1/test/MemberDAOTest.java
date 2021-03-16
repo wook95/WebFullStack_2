@@ -11,21 +11,19 @@ public class MemberDAOTest {
 		MemberDAO mDAO = new MemberDAO();
 		MemberDTO mDTO = new MemberDTO();
 		
-		mDTO.setId("iu");
-		mDTO.setPhone("1234");
-		
+		mDTO.setId("id3");
+		mDTO.setPhone("pw3");
+		mDTO.setName("id3");
+		mDTO.setEmail("id@wsfd");
+		mDTO.setPhone("919192");
+	
 		try {
-			mDTO = mDAO.login(mDTO);
-			
-			System.out.println(mDTO != null);
-			
-			
-			
-			
+			int result = mDAO.memberJoin(mDTO);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
 
 }

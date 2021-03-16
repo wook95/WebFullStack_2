@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <!-- jQuery library -->
@@ -15,6 +14,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+
 
 
 <nav class="navbar navbar-inverse">
@@ -34,51 +34,13 @@
       <li><a href="#">Page 2</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="./member/memberJoin.do"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="./member/memberLogin.do"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="./memberJoin.do"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="./memberLogin.do"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
   </div>
 </nav>
-  
-<div class="container">
-  <h3>Right Aligned Navbar</h3>
-  <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
-</div>
+<h1>member Login page</h1>
 
-
-
-
-
-
-
-
-
-
-
-<!-- 
-
-<h1>index 페이지 입니다!</h1>
-<a href="./member/memberLogin.do">member login </a>
-
-	<form action="./member/memberLogin.do"> 
-	 	<form action="./sub/loginTest.jsp">	
-		<input type="text" name ="id">
-		<input type="password" name = "pw">
-		<button>login</button>
-	</form>
-
-		<form action="./member/memberjoin.do"> 
-	 	<form action="./sub/loginTest.jsp">	
-		<input type="text" name ="id">
-		<input type="password" name = "pw">
-		<input type="text" name = "phone">
-		<input type="text" name = "email">
-		
-		<button>join</button>
-	</form>
-
-
-<h3><a href="./sub/test.jsp?name=iu&age=20">go test</a></h3> -->
 
 </body>
 </html>
