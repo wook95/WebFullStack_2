@@ -49,7 +49,7 @@
 		<div class="low">
 
 			<h1>member Join page</h1>
-			<form class="form-horizontal" action="/action_page.php">
+			<form class="form-horizontal" action="./memberJoin.do" method="post" >
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="id">Id:</label>
 					<div class="col-sm-10">

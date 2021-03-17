@@ -1,5 +1,24 @@
+<%@page import="com.arc.s1.account.AccountDTO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    
+<%
+
+	List<AccountDTO> ar =(List<AccountDTO>)request.getAttribute("list");
+
+
+%>    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,8 +32,16 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!--부트스트랩 활용한 헤더 링크  -->
+
+
 </head>
+
+
+
 <body>
+
 
 
 <nav class="navbar navbar-inverse">
@@ -39,46 +66,40 @@
     </ul>
   </div>
 </nav>
-  
-<div class="container">
-  <h3>Right Aligned Navbar</h3>
-  <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
+<!--네비 바 -->
+
+
+
+<div class = "container">
+	<div class = "row">
+		<h1>Account List</h1>
+		
+		
+		<table class="table table-hover">
+		
+		<thead>
+		<tr>	<th>name</th>	<th>rate</th>	<th>sale</th>		</tr>
+		</thead>
+		
+		<tbody>
+		<% for(int i=0;i<ar.size();i++){ %>
+			<tr>
+				<td><%=ar.get(i).getAccountName() %></td>
+				<td><%=ar.get(i).getRate() %></td>
+				<td><%=ar.get(i).getAccountSale() %></td>	
+			</tr>
+		
+		
+		<%} %>
+		</tbody>
+		
+		</table>
+		
+		
+		
+	</div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-<!-- 
-
-<h1>index 페이지 입니다!</h1>
-<a href="./member/memberLogin.do">member login </a>
-
-	<form action="./member/memberLogin.do"> 
-	 	<form action="./sub/loginTest.jsp">	
-		<input type="text" name ="id">
-		<input type="password" name = "pw">
-		<button>login</button>
-	</form>
-
-		<form action="./member/memberjoin.do"> 
-	 	<form action="./sub/loginTest.jsp">	
-		<input type="text" name ="id">
-		<input type="password" name = "pw">
-		<input type="text" name = "phone">
-		<input type="text" name = "email">
-		
-		<button>join</button>
-	</form>
-
-
-<h3><a href="./sub/test.jsp?name=iu&age=20">go test</a></h3> -->
 
 </body>
 </html>

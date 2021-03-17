@@ -31,11 +31,12 @@ public class MemberService {
 		ActionFoward actionFoward = new ActionFoward();
 		String method = request.getMethod();
 		actionFoward.setPath("../WEB-INF/member/memberJoin.jsp");
+		actionFoward.setCheck(true);
 		
 		
-		
-		
-		if(method.equals("POST")) {
+		if(method.toUpperCase().equals("POST")) {
+			
+			
 			
 			MemberDTO mDTO = new MemberDTO();
 			mDTO.setId(request.getParameter("id"));
@@ -45,8 +46,8 @@ public class MemberService {
 			mDTO.setPhone(request.getParameter("phone"));
 			
 			int result = memberDAO.memberJoin(mDTO);
-			actionFoward.setPath("../index.jsp");
-			
+			actionFoward.setPath("../index.do");
+			actionFoward.setCheck(false);
 			
 		}
 		

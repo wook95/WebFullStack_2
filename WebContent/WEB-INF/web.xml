@@ -23,4 +23,18 @@
  <url-pattern>/member/*</url-pattern>
  </servlet-mapping>
  
+ 
+ <!--  백이 실행 될 수 있게 패턴만들어줌-->
+ 
+   <servlet>
+ <servlet-name>account</servlet-name>
+ <servlet-class>com.arc.s1.account.AccountController</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+ <servlet-name>account</servlet-name>
+ <url-pattern>/account/*</url-pattern>
+ </servlet-mapping>
+ 
+ 
 </web-app>
