@@ -59,6 +59,30 @@ public class AccountService {
 		return actionFoward;
 	}
 	
-	
+	public ActionFoward setWrite(HttpServletRequest request) throws Exception {
+		ActionFoward actionFoward = new ActionFoward();
+		
+		System.out.println("setWrite 실행이 되나 확인을 위한 프린트");
+		//get
+		actionFoward.setPath("../WEB-INF/account/accountWrite.jsp"); //jsp로 갈려면 포워드로 바로 갈 수 있따
+		actionFoward.setCheck(true);
+		
+		if(request.getMethod().toUpperCase().equals("POST")) {
+			
+			AccountDTO accountDTO = new AccountDTO();
+			accountDTO.setAccountName(request.getParameter("accountName"));
+			accountDTO.setRate(Double.parseDouble(request.getParameter("rate")));
+			accountDTO.setAccountSale(request.getParameter("accountSale"));
+			
+			int result = accountDAO.setWrite(accountDTO);
+			
+			actionFoward.setPath("./acccountList.do"); //리스트에 넣어줘야해서 저쪽으로 보냄
+			actionFoward.setCheck(false);
+		}
+		
+		
+		
+		return actionFoward;
+	}
 	
 }

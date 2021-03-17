@@ -72,7 +72,12 @@ public class AccountController extends HttpServlet {
 			else if(uri.equals("accountSelect.do")) {
 				actionFoward = 	accountService.getSelect(request);
 			}
-			
+			else if(uri.equals("accountWrite.do")) {
+				
+				actionFoward = accountService.setWrite(request);
+				
+				
+			}
 			
 		}catch (Exception e) {
 			e.printStackTrace();
