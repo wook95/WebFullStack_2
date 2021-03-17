@@ -41,4 +41,36 @@ public class AccountDAO  {
 	
 	
 	}
+	
+	
+	public AccountDTO getSelect(long accountID) throws Exception{
+	
+		
+		Connection con = DbConnector.dbconnect();
+		
+		String sql = "select * from account where accountId =1 ";
+		PreparedStatement st = con.prepareStatement(sql);
+		ResultSet rs = st.executeQuery();
+		
+		
+		 AccountDTO accountDTO = null;
+		
+		if(rs.next()) {
+				accountDTO = new AccountDTO();
+				accountDTO.setAccountId(rs.getLong("accountId"));
+				accountDTO.setAccountName(rs.getString("accountname"));
+				accountDTO.setRate(rs.getDouble("rate"));
+				accountDTO.setAccountSale(rs.getString("accountsale"));
+				
+		}
+		
+		
+		rs.close();
+		st.close();
+		con.close();
+		
+		return accountDTO;
+		
+	}
+
 }

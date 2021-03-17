@@ -47,6 +47,12 @@ public class AccountController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		//한글 인코딩처리 <--모든 컨트롤러에 다 하삼
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		
+		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		ActionFoward actionFoward = null;
 		
@@ -59,10 +65,17 @@ public class AccountController extends HttpServlet {
 		try {
 			if(uri.equals("accountList.do")) {
 			actionFoward = 	accountService.getList(request);
-			//path 랑 트루 폴스 정보있음
+			//path 랑 트루 폴스 정보있
+			
 			
 			}
+			else if(uri.equals("accountSelect.do")) {
+				actionFoward = 	accountService.getSelect(request);
+			}
+			
+			
 		}catch (Exception e) {
+			e.printStackTrace();
 			// TODO: handle exception
 		}
 		
@@ -78,6 +91,7 @@ public class AccountController extends HttpServlet {
 		 response.sendRedirect(actionFoward.getPath());
 			
 		}
+		
 		
 		
 

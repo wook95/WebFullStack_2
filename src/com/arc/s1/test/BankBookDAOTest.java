@@ -16,8 +16,10 @@ public class BankBookDAOTest {
 		AccountDAO accountDAO = new AccountDAO();
 		
 		try {
-			List<AccountDTO> ar=  accountDAO.getList();
-			System.out.println(ar.size()!=0);
+			AccountDTO accountDTO = accountDAO.getSelect(1);
+			
+//			List<AccountDTO> ar=  accountDAO.getList();
+//			System.out.println(ar.size()!=0);
 			
 			
 		} catch (Exception e) {

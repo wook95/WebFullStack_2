@@ -44,7 +44,7 @@
 
 
 
-<nav class="navbar navbar-inverse">
+ <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">WebSiteName</a>
@@ -84,7 +84,7 @@
 		<tbody>
 		<% for(int i=0;i<ar.size();i++){ %>
 			<tr>
-				<td><%=ar.get(i).getAccountName() %></td>
+				<td><a href ="./accountSelect.do?accountId=<%=ar.get(i).getAccountId()%>">  <%=ar.get(i).getAccountName() %>  </a></td>
 				<td><%=ar.get(i).getRate() %></td>
 				<td><%=ar.get(i).getAccountSale() %></td>	
 			</tr>
@@ -95,11 +95,11 @@
 		
 		</table>
 		
-		
+		<a href="./accountWrite.do" class="btn btn-danger">Write </a>
 		
 	</div>
 </div>
-
+ 
 
 </body>
 </html>

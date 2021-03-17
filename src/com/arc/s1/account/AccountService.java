@@ -27,7 +27,7 @@ public class AccountService {
 		List<AccountDTO> ar = accountDAO.getList(); //webinf bankbooklist.jsp 에 출력
 		
 		
-		actionFoward.setPath("../WEB-INF/account/accountList"); //어떻게 보냄? attribute로 내부-->내부
+		actionFoward.setPath("../WEB-INF/account/accountList.jsp"); //어떻게 보냄? attribute로 내부-->내부
 		
 		request.setAttribute("list", ar); // 이 경로로 포워딩인가 리다이렉튼가 ? 정해야댐 /서버로 요청할땐 .do로/ jsp애 뿌려줄 데이터 있음 무족권 포워ㅡ드
 		
@@ -42,6 +42,23 @@ public class AccountService {
 		
 		return actionFoward;
 	}
+	
+	
+	public ActionFoward getSelect(HttpServletRequest request) throws Exception{
+		ActionFoward actionFoward = new ActionFoward();
+		
+		long accountId = Long.parseLong(request.getParameter("accountId"));
+		
+		
+		AccountDTO accountDTO =accountDAO.getSelect(accountId);
+		
+		actionFoward.setCheck(true);
+		actionFoward.setPath("../WEB-INF/account/accountSelect.jsp");
+		request.setAttribute("dto", accountDTO);
+		
+		return actionFoward;
+	}
+	
 	
 	
 }
